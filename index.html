@@ -1,130 +1,309 @@
 <!DOCTYPE html>
-<html lang="en-IN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cutisight - Vision for AI Dermatology</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <meta name="description" content="Cutisight: Explainable AI for Clinical Dermatology in India. Harnessing vision-language models to bridge the gap in skin health access. Founded by Dr. Mehul Tyagi, MD (AIIMS Delhi).">
+    <title>Cutisight: Explainable Artificial Intelligence for Clinical Dermatology</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-        .vision-card { background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); }
+        /* Basic Reset & Defaults */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.7; color: #333; background-color: #f8f9fa; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
+
+        /* Header */
+        header { background-color: #2c3e50; color: #fff; padding: 2rem 0; text-align: center; margin-bottom: 40px; }
+        header h1 { font-size: 3rem; font-weight: 600; letter-spacing: 1px; }
+
+        /* Section Styling */
+        section { background-color: #fff; margin-bottom: 40px; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); }
+        section h2 { color: #1a5276; margin-bottom: 30px; font-size: 2.2rem; border-bottom: 3px solid #dee2e6; padding-bottom: 15px; font-weight: 600; }
+        section h3 { color: #1f618d; margin-top: 30px; margin-bottom: 15px; font-size: 1.6rem; font-weight: 600; }
+        p, li { margin-bottom: 18px; color: #495057; font-size: 1.05rem; }
+        ul { margin-left: 30px; margin-bottom: 18px; }
+        strong { color: #212529; font-weight: 700; }
+
+        /* Hero Section (Intro Text Only) */
+        .hero-text { padding-bottom: 15px; }
+
+        /* Quotes Styling */
+        .quote { font-style: italic; border-left: 6px solid #16a085; padding: 20px 25px; margin: 35px 0; background-color: #f0fafa; border-radius: 0 8px 8px 0; color: #34495e; font-size: 1.15rem; line-height: 1.8; }
+        .quote p { margin-bottom: 0; }
+
+        /* Table Styling */
+        table { width: 100%; border-collapse: collapse; margin: 30px 0; font-size: 0.95rem; }
+        table th, table td { border: 1px solid #ddd; padding: 12px 15px; text-align: left; }
+        table th { background-color: #e9ecef; color: #343a40; font-weight: 600; }
+        table tr:nth-child(even) { background-color: #f8f9fa; }
+        table caption { caption-side: bottom; text-align: center; margin-top: 10px; font-size: 0.9rem; color: #6c757d; }
+
+        /* Founder Bio Section */
+        .founder-bio { background-color: #eaf2f8; border-left: 5px solid #2980b9; padding: 30px; margin-top: 40px; border-radius: 8px; }
+        .founder-bio h2 { border: none; padding-bottom: 0; margin-bottom: 20px; }
+
+        /* Footer */
+        footer { background-color: #34495e; color: #ecf0f1; text-align: center; margin-top: 50px; padding: 35px 20px; font-size: 0.95rem; }
+        footer p { color: #bdc3c7; margin-bottom: 12px; }
+        footer a { color: #1abc9c; text-decoration: none; margin: 0 10px; transition: color 0.3s ease; }
+        footer a:hover { color: #ffffff; text-decoration: underline; }
+        .footer-links { margin-top: 15px; margin-bottom: 15px; }
+
+        /* Responsive adjustments */
+         @media (max-width: 768px) {
+            header h1 { font-size: 2.4rem; }
+            section { padding: 25px; }
+            section h2 { font-size: 1.8rem; }
+            section h3 { font-size: 1.4rem; }
+            p, li { font-size: 1rem; }
+            .quote { font-size: 1.05rem; padding: 15px 20px; }
+            table { font-size: 0.85rem; }
+            table th, table td { padding: 8px 10px; }
+        }
     </style>
 </head>
-<body class="bg-gray-50">
-    <!-- Header -->
-    <header class="bg-white py-6 shadow-sm sticky top-0 z-10">
-        <div class="container mx-auto px-4 flex items-center">
-            <div class="text-2xl font-bold text-teal-700">CUTISIGHT</div>
-            <nav class="ml-auto space-x-6">
-                <a href="#vision" class="text-gray-600 hover:text-teal-600 font-medium">Vision</a>
-                <a href="#publications" class="text-gray-600 hover:text-teal-600 font-medium">Publications</a>
-                <a href="#contact" class="text-gray-600 hover:text-teal-600 font-medium">Contact</a>
-            </nav>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Cutisight: Explainable Artificial Intelligence for Clinical Dermatology</h1>
         </div>
     </header>
 
-    <!-- Hero with Background Image -->
-    <section class="relative h-96 bg-gray-900 flex items-center">
-        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
-             alt="Medical technology" 
-             class="absolute h-full w-full object-cover opacity-50">
-        <div class="container mx-auto px-4 text-center relative z-10">
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Transforming Dermatology with AI</h1>
-            <p class="text-xl text-teal-100 max-w-3xl mx-auto">
-                A vision by Dr. Mehul Tyagi, MD (AIIMS Delhi)
+    <main class="container">
+
+        <section class="hero-text">
+            <h2>Illuminating the Path to Equitable Skin Health in India</h2>
+            <p>
+                India stands at a crossroads in dermatological care. One path leads to gleaming urban clinics offering the latest cosmetic procedures, catering to a small, affluent segment. The other path winds through vast rural landscapes where millions suffer from treatable, sometimes disfiguring, skin diseases with little hope of expert care. This stark dichotomy isn't just an inconvenience; it's a profound public health crisis demanding urgent, innovative solutions.
             </p>
-        </div>
-    </section>
-
-    <!-- Vision Section -->
-    <section id="vision" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-gray-800 mb-16 text-center">Our Vision for India</h2>
-            
-            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                <!-- Vision Card 1 -->
-                <div class="vision-card p-8 rounded-xl shadow-md border border-gray-200">
-                    <h3 class="text-xl font-semibold mb-4 text-teal-700">Bridging the Gap</h3>
-                    <p class="text-gray-600">
-                        Enable peripheral healthcare workers to deliver dermatological care with AI assistance, 
-                        reducing dependency on specialist availability in rural areas.
-                    </p>
-                </div>
-                
-                <!-- Vision Card 2 -->
-                <div class="vision-card p-8 rounded-xl shadow-md border border-gray-200">
-                    <h3 class="text-xl font-semibold mb-4 text-teal-700">Workflow Efficiency</h3>
-                    <p class="text-gray-600">
-                        Reduce consultation times by 60% through AI-powered preliminary assessments, 
-                        allowing dermatologists to focus on complex cases.
-                    </p>
-                </div>
-                
-                <!-- Vision Card 3 -->
-                <div class="vision-card p-8 rounded-xl shadow-md border border-gray-200">
-                    <h3 class="text-xl font-semibold mb-4 text-teal-700">Accessible Technology</h3>
-                    <p class="text-gray-600">
-                        Offline-capable, low-resource AI models designed specifically for Indian skin types 
-                        and tropical dermatological conditions.
-                    </p>
-                </div>
-                
-                <!-- Vision Card 4 -->
-                <div class="vision-card p-8 rounded-xl shadow-md border border-gray-200">
-                    <h3 class="text-xl font-semibold mb-4 text-teal-700">Interdepartmental Support</h3>
-                    <p class="text-gray-600">
-                        Assist non-dermatology departments in identifying skin manifestations of systemic diseases 
-                        during inpatient consults.
-                    </p>
-                </div>
+            <div class="quote">
+                <p>"In the sun-scorched villages... a grandmother applies motor oil to her grandson’s oozing scabies wounds—a 'remedy' passed down through generations. Two hundred kilometers away in Jaipur, a dermatology clinic’s waiting room buzzes with patients seeking Botox... This paradox defines India’s skin health crisis."</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Publications Section -->
-    <section id="publications" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">Academic Publications</h2>
-            
-            <div class="max-w-3xl mx-auto space-y-6">
-                <!-- Publication 1 - Replace with your actual publications -->
-                <div class="p-6 bg-gray-50 rounded-lg border-l-4 border-teal-500">
-                    <h3 class="text-xl font-semibold mb-2">"Cutaneous Manifestations of Systemic Diseases"</h3>
-                    <p class="text-gray-600 mb-2">Indian Journal of Dermatology, 2022</p>
-                    <a href="#" class="text-teal-600 hover:underline">View Abstract</a>
-                </div>
-                
-                <!-- Publication 2 -->
-                <div class="p-6 bg-gray-50 rounded-lg border-l-4 border-teal-500">
-                    <h3 class="text-xl font-semibold mb-2">"AI in Dermatology: Opportunities for India"</h3>
-                    <p class="text-gray-600 mb-2">Journal of AIIMS Medical Innovation, 2021</p>
-                    <a href="#" class="text-teal-600 hover:underline">View PDF</a>
-                </div>
-                
-                <!-- Add more publications as needed -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-100">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8">Contact</h2>
-            <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
-                For collaborations or inquiries about Cutisight's vision
+            <p>
+                Cutisight emerges from this reality. We are harnessing the power of cutting-edge, **Explainable Artificial Intelligence (XAI)** to build a bridge across this divide. Our mission is to provide accessible, reliable, and understandable preliminary skin condition assessments, empowering individuals, community health workers, and primary care physicians across India, especially in regions starved of specialist access.
             </p>
-            <a href="mailto:drmehultyagi@cutisight.in" class="inline-block bg-teal-600 text-white px-8 py-3 rounded-lg hover:bg-teal-700 transition">
-                Email Dr. Mehul Tyagi
-            </a>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-4 text-center">
-            <p>© 2023 Cutisight. A vision by Dr. Mehul Tyagi, MD (AIIMS Delhi)</p>
+        <section id="problem">
+            <h2>The Challenge: A Deep Divide and Neglected Suffering</h2>
+            <p>The seemingly superficial nature of skin often masks a deep-seated crisis in India's healthcare system. The challenges are multifaceted and interconnected, painting a grim picture of neglect:</p>
+
+            <h3>The Urban Affluence vs. Rural Neglect Chasm</h3>
+            <p>
+                The numbers are stark: roughly 15,000 dermatologists serve a population exceeding 1.5 billion. Worse still, an estimated <strong>80% of these specialists are concentrated in major cities</strong>, drawn by better infrastructure and the lucrative cosmetic dermatology market. This leaves rural India, home to the majority of the population, drastically underserved, with specialist-to-patient ratios potentially exceeding 1 per 200,000. While urban clinics debate the merits of different laser hair removal techniques or anti-aging injectables, villagers mere hours away lack access to basic antifungals or treatment for debilitating infections.
+            </p>
+            <div class="quote">
+                <p>"While cities debate laser hair removal techniques, villages 200 km away still treat open wounds with age-old 'remedies.' ... The whole system’s priorities are etched in these paradoxes and contrasts."</p>
+            </div>
+
+            <h3>The Heavy Burden of "Minor" Ailments and Missed Major Diseases</h3>
+            <p>
+                Skin diseases collectively account for over <strong>4% of India's total Years Lived with Disability (YLDs)</strong> – a burden potentially exceeding that of diabetes. This includes extremely common conditions like fungal infections (rampant in humid climates), scabies, eczema, and bacterial infections. However, the neglect extends to far more serious conditions:
+            </p>
+            <ul>
+                <li><strong>Leprosy:</strong> Despite India achieving "elimination" status (<1 case per 10,000) nationally in 2005, over <strong>100,000 new cases are still detected annually</strong>, representing more than half the global burden. Delayed diagnosis, often due to lack of expert access or stigma (worsened during COVID-19), leads to irreversible nerve damage and disability.</li>
+                <li><strong>Mycetoma ("Madura Foot"):</strong> A chronic, destructive fungal or bacterial infection often affecting the limbs of agricultural workers. Early diagnosis is crucial, but delays frequently lead to amputation and severe disability.</li>
+                <li><strong>Skin Cancers:</strong> While less common overall than in fair-skinned populations, rates are significantly higher in specific groups, like farmers in Punjab (potentially 40% higher than national average) exposed to sun and possibly agrochemicals. Basal cell carcinoma, squamous cell carcinoma, and even melanoma often go undiagnosed until advanced stages due to lack of awareness and screening.</li>
+                <li><strong>Steroid Abuse Complications:</strong> The void left by specialists is filled by unqualified practitioners ("quacks") who liberally prescribe potent topical corticosteroids, often in irrational combinations, as a cure-all. This leads to widespread misuse, causing skin atrophy (thinning), stretch marks (striae), topical steroid dependent face (TSDF), worsening of underlying infections, and even systemic absorption leading to <strong>Cushing's syndrome</strong> (hormonal disorder) in a significant percentage of users.</li>
+            </ul>
+
+            <h3>Systemic Failures and Human Cost</h3>
+            <p>
+                This crisis is fueled by systemic failures: insufficient postgraduate training seats in dermatology focused on clinical needs versus cosmetics, lack of incentives for rural practice, poor primary healthcare infrastructure, unreliable supply chains for essential medicines (like basic antifungal creams), and low health awareness among vulnerable populations. The human cost is immense – chronic discomfort, disfigurement, disability, social stigma, financial ruin from ineffective treatments, and preventable deaths.
+            </p>
+            <div class="quote">
+                 <p>"This is a societal time bomb. When motor oil becomes medicine and influencers replace doctors, the crisis isn’t just skin-deep — it’s a fracture in the system. The human cost is written on patients’ bodies."</p>
+             </div>
+        </section>
+
+        <section id="solution">
+            <h2>The Solution: Cutisight - Accessible, Explainable AI for All</h2>
+            <p>
+                Cutisight is not merely an algorithm; it's a comprehensive solution designed to directly address the critical gaps in Indian dermatological care. We aim to empower various stakeholders within the healthcare ecosystem with a reliable, accessible, and understandable AI tool.
+            </p>
+
+            <h3>Who Will Use Cutisight and Why?</h3>
+            <ul>
+                <li><strong>Patients & Caregivers:</strong> Individuals can use Cutisight for initial self-assessment, gaining reliable preliminary information about their skin condition and understanding the potential severity, helping them make informed decisions about seeking further care. This combats misinformation and anxiety caused by unreliable online searches or quack advice.</li>
+                <li><strong>ASHA & Anganwadi Workers:</strong> These vital frontline community health workers can use Cutisight as a powerful **triage tool**. By capturing an image and basic symptoms, they can receive AI-driven guidance on whether a condition requires immediate referral, routine PHC visit, or simple supportive care, optimizing their efforts and identifying high-risk cases early.</li>
+                <li><strong>Primary Health Centre (PHC) Doctors & Nurses:</strong> Often the first point of medical contact, PHC staff can use Cutisight to augment their diagnostic capabilities for skin conditions, receive suggestions for potential differential diagnoses, and gain confidence in managing common dermatoses, reducing unnecessary referrals for simple cases.</li>
+                <li><strong>Non-Dermatologist Specialists:</strong> Physicians in other fields (pediatrics, internal medicine, etc.) frequently encounter skin manifestations of systemic diseases or incidental findings. Cutisight can serve as a quick reference and preliminary analysis tool, improving their ability to recognize significant skin signs.</li>
+            </ul>
+
+            <h3>Bridging the Gap: Key Features and Goals</h3>
+            <ul>
+                <li><strong>Accessibility (Edge Deployment & Offline Capability):</strong> Recognizing India's diverse infrastructure, Cutisight is being designed for **deployment on edge devices** (smartphones, tablets) with minimal computational requirements. Crucially, core functionalities aim to work **offline**, overcoming the barrier of inconsistent internet connectivity prevalent in many rural and remote areas.</li>
+                <li><strong>Usability:</strong> The interface will be intuitive and simple, requiring minimal technical expertise, enabling easy adoption by users with varying levels of digital literacy. Support for local languages is a key development goal.</li>
+                <li><strong>Accuracy & Reliability:</strong> Leveraging state-of-the-art AI models trained on diverse, high-quality data (including a large proprietary Indian dataset), Cutisight aims for high accuracy in identifying common conditions and flagging suspicious lesions. While benchmarks evolve, we target performance comparable to or exceeding expert levels reported in literature for specific tasks (e.g., **aiming for >90% accuracy in distinguishing common benign vs. malignant lesion types**, based on similar AI studies), while always emphasizing that Cutisight provides **preliminary assessment, not final diagnosis**.</li>
+                <li><strong>Explainability (XAI):</strong> A core tenet of Cutisight is trust. The AI will provide clear, concise **textual explanations** for its suggestions (e.g., "Suggests fungal infection due to presence of annular lesion with central clearing and peripheral scaling"), making its reasoning transparent to the user.</li>
+            </ul>
+
+            <h3>Beyond Diagnosis: Broader Impact</h3>
+            <p>Cutisight's vision extends beyond simple identification:</p>
+            <ul>
+                <li><strong>Teaching the Language of Dermatology:</strong> By providing structured assessments and using correct terminology with explanations, Cutisight aims to **educate non-specialists**, improving their understanding and description of skin findings.</li>
+                <li><strong>Guiding Preliminary Investigations:</strong> Based on the AI assessment, Cutisight can suggest simple, relevant bedside tests (e.g., "Consider KOH examination for fungal elements" if tinea is suspected), empowering PHC doctors to perform basic workups.</li>
+                <li><strong>Optimizing Healthcare Resources:</strong> By providing reliable preliminary assessments and guiding appropriate referrals, Cutisight can help **reduce the burden on overcrowded dermatology OPDs**, freeing up specialists' time for complex cases and minimizing unnecessary patient travel and expense.</li>
+            </ul>
+             <div class="quote">
+                 <p>"Delhi’s elite debated...cosmetic surgeries via WhatsApp as a generation of villagers learned to swallow pain with steroid cocktails, their skin full of striae displaying an evident roadmap of neglect."</p>
+             </div>
+            <p>Cutisight aims to empower users at every level, fostering a more informed, efficient, and equitable approach to skin health across India.</p>
+        </section>
+
+        <section id="technology">
+            <h2>Technology: Deep Dive into Explainable Vision-Language Intelligence</h2>
+            <p>
+                Cutisight stands at the confluence of cutting-edge computer vision and natural language processing, specifically architected as an **explainable image-text to text chat model**. Understanding how it works requires looking at its core components and the pipeline that integrates them.
+            </p>
+
+            <h3>Understanding the Building Blocks</h3>
+            <ul>
+                <li>
+                    <strong>Computer Vision Fundamentals:</strong> At its heart, computer vision aims to enable machines to "see" and interpret images like humans do. This starts with representing images as grids of pixels. Early methods focused on handcrafted features (edges, corners, textures). Modern approaches, particularly **Convolutional Neural Networks (CNNs)**, automatically learn hierarchical features directly from data – simple patterns in early layers (like lines) combine to form complex features in deeper layers (like shapes, objects, or in our case, specific lesion characteristics like border irregularity or scale texture). These learned features allow the model to understand the visual content of a dermatological image.
+                </li>
+                <li>
+                    <strong>Vision-Language Models (CLIP-like Architecture):</strong> Traditional CNNs excel at image classification but lack nuanced understanding connecting visuals to language. Models inspired by **CLIP (Contrastive Language-Image Pre-training)** revolutionize this. CLIP learns by associating vast numbers of images with their corresponding textual descriptions from the internet. It trains two separate encoders – one for images (often a Vision Transformer or ResNet variant) and one for text (a Transformer). The goal is to map related image-text pairs close together in a shared **multimodal embedding space** using a technique called contrastive learning. This means the model learns semantic similarities; the image of a "red, scaly plaque" is mapped near the text "psoriasis patch." This enables powerful **zero-shot capabilities** (identifying concepts it wasn't explicitly trained on) and a richer understanding than image-only models. Cutisight utilizes a highly adapted CLIP-like encoder trained extensively on dermatological data.
+                </li>
+                <li>
+                    <strong>Small Language Models (SLMs):</strong> While Large Language Models (LLMs) like GPT-4 demonstrate impressive general knowledge, they are computationally expensive. **Small Language Models (SLMs)** (e.g., architectures like Gemma, Phi, or distilled versions of larger models) offer a more efficient alternative. They possess strong reasoning and language generation capabilities but with significantly fewer parameters. For Cutisight, an SLM is fine-tuned on a massive corpus of dermatology-specific text (textbooks, guidelines, research papers) and our custom instruction datasets. This specialization allows it to understand medical context, generate clinically relevant text, engage in diagnostic reasoning, and operate efficiently on edge devices.
+                </li>
+            </ul>
+
+            <h3>The Cutisight Pipeline: From Input to Insight</h3>
+            <p>When a user provides an image and accompanying text (symptoms, history):</p>
+            <ol>
+                <li><strong>Input Processing:</strong> The image is pre-processed (resized, normalized), and the text is tokenized (broken into meaningful units).</li>
+                <li><strong>Multimodal Encoding:</strong> The image passes through the specialized Vision Encoder, generating a rich visual embedding. Simultaneously, the input text passes through a Text Encoder, creating a textual embedding.</li>
+                <li><strong>Information Fusion:</strong> Visual and textual embeddings are intelligently combined or cross-referenced (using attention mechanisms) to create a unified representation capturing information from both modalities.</li>
+                <li><strong>SLM Reasoning & Generation:</strong> This fused representation is fed into the dermatology-specialized SLM. The SLM performs contextual reasoning, drawing upon its fine-tuned knowledge to:
+                    <ul>
+                        <li>Generate potential differential diagnoses.</li>
+                        <li>Assess severity or likelihood of concerning features.</li>
+                        <li>Formulate clarifying questions (in chat mode).</li>
+                        <li>Produce a final textual output, including the assessment and explanation.</li>
+                    </ul>
+                </li>
+                <li><strong>Output Delivery:</strong> The generated text, including the assessment, confidence levels (where applicable), and crucially, the explanation, is presented to the user.</li>
+            </ol>
+
+            <h3>Ensuring Explainability (XAI)</h3>
+            <p>A "black box" AI is unacceptable in healthcare. Cutisight incorporates XAI techniques:</p>
+            <ul>
+                <li><strong>Attention Visualization (Conceptual):</strong> Techniques like attention maps can potentially highlight which parts of the image the vision encoder focused on most when making its assessment (e.g., highlighting the irregular border of a mole). While direct visualization might be complex for end-users, this informs model development and debugging.</li>
+                <li><strong>Textual Rationales:</strong> The primary mode of explanation is through clear, concise text generated by the SLM. It explicitly states the features (visual or textual) that led to its suggestion (e.g., "Presence of well-demarcated erythematous plaques with silvery scales on extensor surfaces strongly suggests psoriasis."). This allows users to understand the 'why' behind the AI's output.</li>
+            </ul>
+
+            <h3>Enhanced Capabilities: Chat and Knowledge Augmentation</h3>
+            <ul>
+                <li><strong>Conversational Interaction:</strong> Beyond single-turn analysis, Cutisight is designed as a chat model. Users can ask follow-up questions, provide additional information, or request clarification, allowing for a more dynamic and helpful interaction.</li>
+                <li><strong>Retrieval-Augmented Generation (RAG):</strong> To ensure access to the latest information and handle queries beyond its core training, the SLM can utilize RAG. When faced with a specific query (e.g., "latest treatment guidelines for hidradenitis suppurativa"), the system can retrieve relevant snippets from a trusted, up-to-date knowledge base (like recent guidelines or landmark papers) and use the SLM to synthesize an accurate answer, grounded in external evidence.</li>
+            </ul>
+
+             <h3>Future Directions: Seamless Integration</h3>
+             <p>
+                We envision further integration to maximize accessibility, including exploring connections with mobile assistants like **Google Gemini**. This could allow users to interact with Cutisight through voice commands or within familiar mobile interfaces, further lowering the barrier to accessing preliminary dermatological assessment.
+             </p>
+        </section>
+
+        <section id="data">
+            <h2>Data: The Lifeblood of Accurate and Equitable AI</h2>
+            <p>
+                The adage "garbage in, garbage out" is acutely true for medical AI. The performance, reliability, and crucially, the **fairness** of Cutisight depend entirely on the quality, diversity, and relevance of the data it learns from. Our data strategy, meticulously curated and overseen by Dr. Mehul Tyagi, is designed to build a robust foundation specifically for the Indian context.
+            </p>
+
+            <h3>A Multi-Source, Context-Aware Approach</h3>
+            <p>We leverage several types of data, each serving a distinct purpose:</p>
+            <table>
+                <caption>Overview of Data Sources for Cutisight Training</caption>
+                <thead>
+                    <tr>
+                        <th>Data Type</th>
+                        <th>Description & Content</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Proprietary Indian Clinical Dataset</strong></td>
+                        <td>Over 50,000+ anonymized clinical images collected under expert supervision across various settings in India. Includes diverse skin types (Fitzpatrick IV-VI), common and rare conditions prevalent locally, varied lighting, and images from different devices. Meticulously annotated with diagnoses, key features, and metadata.</td>
+                        <td>Core visual training; ensures relevance to Indian population and conditions; reduces bias from Western-centric data.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Public Diverse Datasets</strong></td>
+                        <td>Ethically sourced public datasets focusing on skin of color, such as <strong>Diverse Dermatology Images (DDI)</strong>. Contains images annotated for various conditions across different skin tones.</td>
+                        <td>Explicitly improves model performance and fairness on underrepresented darker skin types; enhances generalization.</td>
+                    </tr>
+                     <tr>
+                        <td><strong>Public General Dermatology Datasets</strong></td>
+                        <td>Established public datasets like <strong>ISIC</strong> (melanoma focus), <strong>PAD-UFES</strong> (common conditions), <strong>SCIN</strong>, <strong>SkinCAP</strong>. Contain large numbers of images for various conditions, often well-annotated.</td>
+                        <td>Increases exposure to a wider range of conditions and visual presentations; improves robustness for common global dermatoses.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Synthetic Data (Augmentation)</strong></td>
+                        <td>Generated images using advanced AI techniques (inspired by methods like <strong>DermaSynth</strong>), particularly for rare conditions or specific feature variations where real data is scarce. Used cautiously and validated for realism.</td>
+                        <td>Augments training data for rare cases; improves model robustness against visual variations; helps balance dataset distribution.</td>
+                    </tr>
+                     <tr>
+                        <td><strong>Textual Knowledge Corpus</strong></td>
+                        <td>Vast collection of text from <strong>PubMed abstracts, open-access medical textbooks, WHO guidelines, clinical protocols, reputable online resources (e.g., DermNet)</strong>, and custom-written clinical vignettes.</td>
+                        <td>Trains the SLM component; provides medical knowledge; enables understanding of symptoms, history, and generation of clinically relevant text.</td>
+                    </tr>
+                     <tr>
+                        <td><strong>Custom Image-Caption & Instruction Data</strong></td>
+                        <td>Large datasets created in-house by Dr. Tyagi: (1) Pairs of dermatological images and detailed textual descriptions (captions). (2) Question-answer pairs, diagnostic reasoning examples, explanation requests, and conversational dialogues (instructions) developed using tools like Google AI Studio & GitHub Copilot.</td>
+                        <td>Crucial for fine-tuning the vision-language connection (captions) and aligning the SLM for chat, explanation, and instruction-following capabilities (instructions).</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Refining Data: Beyond Raw Pixels and Text</h3>
+            <p>
+                Raw data is not enough. Significant effort goes into refining and structuring this information to make it meaningful for the AI model, focusing on clinical relevance without getting lost in overly technical implementation details from a user perspective:
+            </p>
+            <ul>
+                <li><strong>Rigorous Anonymization:</strong> Patient privacy is paramount. All identifying information is meticulously removed from images and text before use.</li>
+                <li><strong>Expert Annotation & Validation:</strong> Image labels and text annotations are performed or validated by qualified dermatological expertise to ensure diagnostic accuracy and consistency.</li>
+                <li><strong>Structured Medical Concepts:</strong> We don't just use keywords. We map findings and diagnoses to standardized medical concepts (drawing principles from ontologies like SNOMED CT). This means the model understands that "erythema" is a type of redness, or that "pustule" and "vesicle" are different types of primary lesions.</li>
+                <li><strong>Understanding Relationships:</strong> The data refinement process helps the model learn relationships between concepts – e.g., "impetigo" *is-a* "bacterial infection," "sun exposure" *can-cause* "actinic keratosis," "atopic dermatitis" *is-associated-with* "asthma."</li>
+                <li><strong>Hierarchical Knowledge:</strong> The model learns hierarchies – understanding that a "macule" and a "patch" are both flat lesions but differ in size, or that different types of "dermatitis" exist (atopic, contact, seborrheic).</li>
+                <li><strong>Consistency and Clarity:</strong> Ensuring that terminology is used consistently across the dataset and that textual descriptions are clear and unambiguous is vital for effective learning.</li>
+            </ul>
+            <p>This meticulous data preparation process is fundamental to building an AI that is not only accurate but also understands the nuances of clinical dermatology and can communicate effectively and safely.</p>
+        </section>
+
+        <!-- Founder Bio Section -->
+        <section class="founder-bio">
+            <h2>About the Founder</h2>
+            <p>
+                Cutisight was founded by <strong>Dr. Mehul Tyagi</strong>, a dermatologist deeply committed to addressing the healthcare disparities he witnessed firsthand during his medical training and practice. Holding an <strong>MD in Dermatology from the prestigious All India Institute of Medical Sciences (AIIMS), New Delhi</strong>, Dr. Tyagi possesses a strong foundation in clinical dermatology and dermatopathology.
+            </p>
+            <p>
+                His motivation stems from observing the stark contrast between the advanced dermatological care available to a few in urban centers and the widespread neglect faced by the majority, particularly in rural India. Seeing patients suffer from preventable complications of common skin diseases, the devastating impact of delayed diagnoses of serious conditions like leprosy and skin cancer, and the harm caused by rampant quackery fueled his resolve to find a scalable solution.
+            </p>
+            <p>
+                Dr. Tyagi believes that technology, specifically thoughtfully applied Artificial Intelligence, holds immense potential to democratize access to healthcare knowledge and preliminary assessment. He is passionate about leveraging AI not just for diagnosis, but as a tool for empowerment – enabling patients, community health workers, and primary care physicians with reliable information and guidance. His hands-on involvement in curating the specialized datasets and shaping the AI's clinical reasoning ensures that Cutisight remains grounded in real-world medical needs and ethical considerations. He actively contributes to the field through research and publications in peer-reviewed dermatology journals.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+             <div class="footer-links">
+                 <!-- Updated Contact and Links -->
+                 <a href="mailto:drmehultyagi@cutisight.com">drmehultyagi@cutisight.com</a> |
+                 <a href="https://orcid.org/0000-0003-0327-8166" target="_blank" rel="noopener noreferrer">ORCID</a> |
+                 <a href="https://www.linkedin.com/in/drmehultyagi/" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
+                 <a href="https://www.instagram.com/drmehultyagi/" target="_blank" rel="noopener noreferrer">Instagram</a>
+             </div>
+             <p class="publications">
+                <!-- Reference to publications remains subtle -->
+                Dr. Tyagi contributes to clinical dermatology research via publications in various peer-reviewed journals.
+             </p>
+            <p style="margin-top: 20px;">© 2025 Cutisight. All rights reserved.</p>
         </div>
     </footer>
+
 </body>
 </html>
