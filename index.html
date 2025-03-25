@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cutisight - Vision for AI Dermatology</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .vision-card { background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white py-6 shadow-sm sticky top-0 z-10">
+        <div class="container mx-auto px-4 flex items-center">
+            <div class="text-2xl font-bold text-teal-700">CUTISIGHT</div>
+            <nav class="ml-auto space-x-6">
+                <a href="#vision" class="text-gray-600 hover:text-teal-600 font-medium">Vision</a>
+                <a href="#publications" class="text-gray-600 hover:text-teal-600 font-medium">Publications</a>
+                <a href="#contact" class="text-gray-600 hover:text-teal-600 font-medium">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero with Background Image -->
+    <section class="relative h-96 bg-gray-900 flex items-center">
+        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+             alt="Medical technology" 
+             class="absolute h-full w-full object-cover opacity-50">
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Transforming Dermatology with AI</h1>
+            <p class="text-xl text-teal-100 max-w-3xl mx-auto">
+                A vision by Dr. Mehul Tyagi, MD (AIIMS Delhi)
+            </p>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-gray-800 mb-16 text-center">Our Vision for India</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Vision Card 1 -->
+                <div class="vision-card p-8 rounded-xl shadow-md border border-gray-200">
+                    <h3 class="text-xl font-semibold mb-4 text-teal-700">Bridging the Gap</h3>
+                    <p class="text-gray-600">
+                        Enable peripheral healthcare workers to deliver dermatological care with AI assistance, 
+                        reducing dependency on specialist availability in rural areas.
+                    </p>
+                </div>
+                
+                <!-- Vision Card 2 -->
+                <div class="vision-card p-8 rounded-xl shadow-md border border-gray-200">
+                    <h3 class="text-xl font-semibold mb-4 text-teal-700">Workflow Efficiency</h3>
+                    <p class="text-gray-600">
+                        Reduce consultation times by 60% through AI-powered preliminary assessments, 
+                        allowing dermatologists to focus on complex cases.
+                    </p>
+                </div>
+                
+                <!-- Vision Card 3 -->
+                <div class="vision-card p-8 rounded-xl shadow-md border border-gray-200">
+                    <h3 class="text-xl font-semibold mb-4 text-teal-700">Accessible Technology</h3>
+                    <p class="text-gray-600">
+                        Offline-capable, low-resource AI models designed specifically for Indian skin types 
+                        and tropical dermatological conditions.
+                    </p>
+                </div>
+                
+                <!-- Vision Card 4 -->
+                <div class="vision-card p-8 rounded-xl shadow-md border border-gray-200">
+                    <h3 class="text-xl font-semibold mb-4 text-teal-700">Interdepartmental Support</h3>
+                    <p class="text-gray-600">
+                        Assist non-dermatology departments in identifying skin manifestations of systemic diseases 
+                        during inpatient consults.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">Academic Publications</h2>
+            
+            <div class="max-w-3xl mx-auto space-y-6">
+                <!-- Publication 1 - Replace with your actual publications -->
+                <div class="p-6 bg-gray-50 rounded-lg border-l-4 border-teal-500">
+                    <h3 class="text-xl font-semibold mb-2">"Cutaneous Manifestations of Systemic Diseases"</h3>
+                    <p class="text-gray-600 mb-2">Indian Journal of Dermatology, 2022</p>
+                    <a href="#" class="text-teal-600 hover:underline">View Abstract</a>
+                </div>
+                
+                <!-- Publication 2 -->
+                <div class="p-6 bg-gray-50 rounded-lg border-l-4 border-teal-500">
+                    <h3 class="text-xl font-semibold mb-2">"AI in Dermatology: Opportunities for India"</h3>
+                    <p class="text-gray-600 mb-2">Journal of AIIMS Medical Innovation, 2021</p>
+                    <a href="#" class="text-teal-600 hover:underline">View PDF</a>
+                </div>
+                
+                <!-- Add more publications as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8">Contact</h2>
+            <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
+                For collaborations or inquiries about Cutisight's vision
+            </p>
+            <a href="mailto:drmehultyagi@cutisight.in" class="inline-block bg-teal-600 text-white px-8 py-3 rounded-lg hover:bg-teal-700 transition">
+                Email Dr. Mehul Tyagi
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2023 Cutisight. A vision by Dr. Mehul Tyagi, MD (AIIMS Delhi)</p>
+        </div>
+    </footer>
+</body>
+</html>
