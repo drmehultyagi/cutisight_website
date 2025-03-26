@@ -67,7 +67,7 @@
             margin-left: auto;
             margin-right: auto;
         }
-        /* --- MODIFIED Text Elements for Readability --- */
+        /* --- MODIFIED Text Elements for Readability & Justification --- */
         p, li {
             margin-bottom: 18px;
             color: #495057;
@@ -75,6 +75,7 @@
             max-width: 75ch; /* Limit line length */
             margin-left: auto; /* Center the text block */
             margin-right: auto; /* Center the text block */
+            text-align: justify; /* ADDED FOR JUSTIFICATION */
         }
         /* --- MODIFIED List Elements for Indentation & Centering --- */
         ul, ol {
@@ -87,7 +88,7 @@
         li {
              margin-left: 0; /* Reset specific li margin */
              /* Ensure list items themselves don't re-center if they contain block elements */
-             text-align: left;
+             text-align: justify; /* Ensure list items also justify */
         }
 
         strong { color: #212529; font-weight: 700; }
@@ -97,7 +98,7 @@
 
         /* Quotes Styling */
         .quote { font-style: italic; border-left: 6px solid #16a085; padding: 20px 25px; margin: 35px auto; background-color: #f0fafa; border-radius: 0 8px 8px 0; color: #34495e; font-size: 1.15rem; line-height: 1.8; max-width: 75ch; /* Also apply max-width and centering to quotes */}
-        .quote p { margin-bottom: 0; }
+        .quote p { margin-bottom: 0; text-align: left; /* Keep quote text left-aligned usually */}
 
         /* Table Styling */
         .table-wrapper { /* Wrap tables for horizontal scroll */
@@ -114,23 +115,24 @@
         /* Founder Bio Section */
         .founder-bio { background-color: #eaf2f8; border-left: 5px solid #2980b9; padding: 30px; margin-top: 40px; border-radius: 8px; }
         .founder-bio h2 { border: none; padding-bottom: 0; margin-bottom: 20px; }
-        /* Ensure text within founder bio is also centered */
+        /* Ensure text within founder bio is also centered and justified */
         .founder-bio p {
              max-width: 75ch;
              margin-left: auto;
              margin-right: auto;
+             text-align: justify; /* Justify founder bio text */
         }
 
         /* Volunteer Section Specific Styling (Optional) */
         #volunteer ul { list-style-type: none; padding-left: 0; /* Remove default padding for this specific list */}
-        #volunteer li { margin-bottom: 10px; }
+        #volunteer li { margin-bottom: 10px; text-align: left; /* Keep volunteer list items left-aligned */ }
         #volunteer li a { text-decoration: none; color: #1f618d; }
         #volunteer li a:hover { text-decoration: underline; }
 
 
         /* Footer */
         footer { background-color: #34495e; color: #ecf0f1; text-align: center; margin-top: 50px; padding: 35px 20px; font-size: 0.95rem; }
-        footer p { color: #bdc3c7; margin-bottom: 12px; max-width: none; /* Footer text can be wider */}
+        footer p { color: #bdc3c7; margin-bottom: 12px; max-width: none; /* Footer text can be wider */ text-align: center; /* Center footer text */}
         footer a { color: #1abc9c; text-decoration: none; margin: 0 10px; transition: color 0.3s ease; }
         footer a:hover { color: #ffffff; text-decoration: underline; }
         .footer-links { margin-top: 15px; margin-bottom: 15px; }
@@ -155,7 +157,7 @@
                 max-width: none; /* Allow text full width on small screens */
                 margin-left: 0; /* Reset auto margins */
                 margin-right: 0;
-                text-align: left; /* Ensure text aligns left */
+                text-align: left; /* Ensures text aligns left on mobile (overrides justify) */
             }
              ul, ol {
                  max-width: none; /* Allow lists full width */
@@ -164,7 +166,7 @@
                  padding-left: 15px; /* Adjust mobile padding */
              }
             .quote {
-                font-size: 1.05rem; padding: 15px 20px; max-width: none; margin-left: 0; margin-right: 0;
+                font-size: 1.05rem; padding: 15px 20px; max-width: none; margin-left: 0; margin-right: 0; text-align: left;
             }
             /* --- MODIFIED Mobile Table Handling --- */
             .table-wrapper {
@@ -177,7 +179,8 @@
             table { font-size: 0.85rem; min-width: 500px; /* Adjust min-width if needed */}
             table th, table td { padding: 8px 10px; white-space: nowrap; /* Force no wrap on mobile for horizontal scroll */}
 
-            .founder-bio p { max-width: none; margin-left: 0; margin-right: 0; }
+            .founder-bio p { max-width: none; margin-left: 0; margin-right: 0; text-align: left; /* Left align bio on mobile */}
+            #volunteer li { text-align: left; } /* Ensure volunteer list is left aligned */
          }
     </style>
 </head>
@@ -211,7 +214,7 @@
             <h2>The Challenge: A Deep Divide and Neglected Suffering</h2>
             <p>The seemingly superficial nature of skin often masks a deep-seated crisis in India's healthcare system. The challenges are multifaceted and interconnected, painting a grim picture of neglect:</p>
 
-            <h3>The Urban Affluence vs. Rural Neglect Chasm</h3>
+            <h3>The Urban Affluence vs. Rural Neglect </h3>
             <p>
                 The numbers are stark: roughly 15,000 dermatologists serve a population exceeding 1.5 billion. Worse still, an estimated <strong>80% of these specialists are concentrated in major cities</strong>, drawn by better infrastructure and the lucrative cosmetic dermatology market. This leaves rural India, home to the majority of the population, drastically underserved, with specialist-to-patient ratios potentially exceeding 1 per 200,000. While urban clinics debate the merits of different laser hair removal techniques or anti-aging injectables, villagers mere hours away lack access to basic antifungals or treatment for debilitating infections.
             </p>
@@ -235,7 +238,7 @@
                 This crisis is fueled by systemic failures: insufficient postgraduate training seats in dermatology focused on clinical needs versus cosmetics, lack of incentives for rural practice, poor primary healthcare infrastructure, unreliable supply chains for essential medicines (like basic antifungal creams), and low health awareness among vulnerable populations. The human cost is immense – chronic discomfort, disfigurement, disability, social stigma, financial ruin from ineffective treatments, and preventable deaths.
             </p>
             <div class="quote">
-                 <p>"This is a s time bomb. When influencers and quacks replace doctors, the crisis isn’t just skin-deep - it’s a fracture in the system. The human cost is written on patients’ bodies."</p>
+                 <p>"This is a time bomb. When influencers and quacks replace doctors, the crisis isn’t just skin-deep - it’s a fracture in the system. The human cost is written on patients’ bodies."</p>
              </div>
         </section>
 
@@ -248,25 +251,25 @@
             <h3>Who Will Use Cutisight and Why?</h3>
             <ul>
                 <li><strong>Patients & Caregivers:</strong> Individuals can use Cutisight for initial self-assessment, gaining reliable preliminary information about their skin condition and understanding the potential severity, helping them make informed decisions about seeking further care. This combats misinformation and anxiety caused by unreliable online searches or quack advice.</li>
-                <li><strong>ASHA & Anganwadi Workers:</strong> These vital frontline community health workers can use Cutisight as a powerful triage tool. By capturing an image and basic symptoms, they can receive AI-driven guidance on whether a condition requires immediate referral, routine PHC visit, or simple supportive care, optimizing their efforts and identifying high-risk cases early.</li>
+                <li><strong>ASHA & Anganwadi Workers:</strong> These vital frontline community health workers can use Cutisight as a powerful **triage tool**. By capturing an image and basic symptoms, they can receive AI-driven guidance on whether a condition requires immediate referral, routine PHC visit, or simple supportive care, optimizing their efforts and identifying high-risk cases early.</li>
                 <li><strong>Primary Health Centre (PHC) Doctors & Nurses:</strong> Often the first point of medical contact, PHC staff can use Cutisight to augment their diagnostic capabilities for skin conditions, receive suggestions for potential differential diagnoses, and gain confidence in managing common dermatoses, reducing unnecessary referrals for simple cases.</li>
                 <li><strong>Non-Dermatologist Specialists:</strong> Physicians in other fields (pediatrics, internal medicine, etc.) frequently encounter skin manifestations of systemic diseases or incidental findings. Cutisight can serve as a quick reference and preliminary analysis tool, improving their ability to recognize significant skin signs.</li>
             </ul>
 
             <h3>Bridging the Gap: Key Features and Goals</h3>
             <ul>
-                <li><strong>Accessibility (Edge Deployment & Offline Capability):</strong> Recognizing India's diverse infrastructure, Cutisight is being designed for deployment on edge devices (smartphones, tablets) with minimal computational requirements. Crucially, core functionalities aim to work **offline**, overcoming the barrier of inconsistent internet connectivity prevalent in many rural and remote areas.</li>
+                <li><strong>Accessibility (Edge Deployment & Offline Capability):</strong> Recognizing India's diverse infrastructure, Cutisight is being designed for **deployment on edge devices** (smartphones, tablets) with minimal computational requirements. Crucially, core functionalities aim to work **offline**, overcoming the barrier of inconsistent internet connectivity prevalent in many rural and remote areas.</li>
                 <li><strong>Usability:</strong> The interface will be intuitive and simple, requiring minimal technical expertise, enabling easy adoption by users with varying levels of digital literacy. Support for local languages is a key development goal.</li>
                 <li><strong>Accuracy & Reliability:</strong> Leveraging state-of-the-art AI models trained on diverse, high-quality data (including a large proprietary Indian dataset), Cutisight aims for high accuracy in identifying common conditions and flagging suspicious lesions. While benchmarks evolve, we target performance comparable to or exceeding expert levels reported in literature for specific tasks (e.g., **aiming for >90% accuracy in distinguishing common benign vs. malignant lesion types**, based on similar AI studies), while always emphasizing that Cutisight provides **preliminary assessment, not final diagnosis**.</li>
-                <li><strong>Explainability (XAI):</strong> A core tenet of Cutisight is trust. The AI will provide clear, concise textual explanations for its suggestions (e.g., "Suggests fungal infection due to presence of annular lesion with central clearing and peripheral scaling"), making its reasoning transparent to the user.</li>
+                <li><strong>Explainability (XAI):</strong> A core tenet of Cutisight is trust. The AI will provide clear, concise **textual explanations** for its suggestions (e.g., "Suggests fungal infection due to presence of annular lesion with central clearing and peripheral scaling"), making its reasoning transparent to the user.</li>
             </ul>
 
             <h3>Beyond Diagnosis: Broader Impact</h3>
             <p>Cutisight's vision extends beyond simple identification:</p>
             <ul>
-                <li><strong>Teaching the Language of Dermatology:</strong> By providing structured assessments and using correct terminology with explanations, Cutisight aims to educate non-specialists, improving their understanding and description of skin findings.</li>
+                <li><strong>Teaching the Language of Dermatology:</strong> By providing structured assessments and using correct terminology with explanations, Cutisight aims to **educate non-specialists**, improving their understanding and description of skin findings.</li>
                 <li><strong>Guiding Preliminary Investigations:</strong> Based on the AI assessment, Cutisight can suggest simple, relevant bedside tests (e.g., "Consider KOH examination for fungal elements" if tinea is suspected), empowering PHC doctors to perform basic workups.</li>
-                <li><strong>Optimizing Healthcare Resources:</strong> By providing reliable preliminary assessments and guiding appropriate referrals, Cutisight can help reduce the burden on overcrowded dermatology OPDs, freeing up specialists' time for complex cases and minimizing unnecessary patient travel and expense.</li>
+                <li><strong>Optimizing Healthcare Resources:</strong> By providing reliable preliminary assessments and guiding appropriate referrals, Cutisight can help **reduce the burden on overcrowded dermatology OPDs**, freeing up specialists' time for complex cases and minimizing unnecessary patient travel and expense.</li>
             </ul>
              <div class="quote">
                  <p>" A generation of Indians learned to manage pain with steroid cocktails, itch with combination creams and  their skin full of striae displays an evident roadmap of neglect."</p>
@@ -277,19 +280,19 @@
         <section id="technology">
             <h2>Technology: Deep Dive into Explainable Vision-Language Intelligence</h2>
             <p>
-                Cutisight stands at the confluence of cutting-edge computer vision and natural language processing, specifically architected as an explainable image-text to text chat model. Understanding how it works requires looking at its core components and the pipeline that integrates them.
+                Cutisight stands at the confluence of cutting-edge computer vision and natural language processing, specifically architected as an **explainable image-text to text chat model**. Understanding how it works requires looking at its core components and the pipeline that integrates them.
             </p>
 
             <h3>Understanding the Building Blocks</h3>
             <ul>
                 <li>
-                    <strong>Computer Vision Fundamentals:</strong> At its heart, computer vision aims to enable machines to "see" and interpret images like humans do. This starts with representing images as grids of pixels. Early methods focused on handcrafted features (edges, corners, textures). Modern approaches, particularly Convolutional Neural Networks (CNNs), automatically learn hierarchical features directly from data – simple patterns in early layers (like lines) combine to form complex features in deeper layers (like shapes, objects, or in our case, specific lesion characteristics like border irregularity or scale texture). These learned features allow the model to understand the visual content of a dermatological image.
+                    <strong>Computer Vision Fundamentals:</strong> At its heart, computer vision aims to enable machines to "see" and interpret images like humans do. This starts with representing images as grids of pixels. Early methods focused on handcrafted features (edges, corners, textures). Modern approaches, particularly **Convolutional Neural Networks (CNNs)**, automatically learn hierarchical features directly from data – simple patterns in early layers (like lines) combine to form complex features in deeper layers (like shapes, objects, or in our case, specific lesion characteristics like border irregularity or scale texture). These learned features allow the model to understand the visual content of a dermatological image.
                 </li>
                 <li>
-                    <strong>Vision-Language Models (CLIP-like Architecture):</strong> Traditional CNNs excel at image classification but lack nuanced understanding connecting visuals to language. Models inspired by CLIP (Contrastive Language-Image Pre-training) revolutionized this. CLIP learns by associating vast numbers of images with their corresponding textual descriptions. It trains two separate encoders – one for images (often a Vision Transformer or ResNet variant) and one for text (a Transformer). The goal is to map related image-text pairs close together in a shared multimodal embedding space using a technique called contrastive learning. This means the model learns semantic similarities; the image of a "red, scaly plaque" is mapped near the text "psoriasis patch." This enables powerful zero-shot capabilities (identifying concepts it wasn't explicitly trained on) and a richer understanding than image-only models. Cutisight utilizes a highly adapted CLIP-like encoder trained extensively on dermatological data.
+                    <strong>Vision-Language Models (CLIP-like Architecture):</strong> Traditional CNNs excel at image classification but lack nuanced understanding connecting visuals to language. Models inspired by **CLIP (Contrastive Language-Image Pre-training)** revolutionize this. CLIP learns by associating vast numbers of images with their corresponding textual descriptions. It trains two separate encoders – one for images (often a Vision Transformer or ResNet variant) and one for text (a Transformer). The goal is to map related image-text pairs close together in a shared **multimodal embedding space** using a technique called contrastive learning. This means the model learns semantic similarities; the image of a "red, scaly plaque" is mapped near the text "psoriasis patch." This enables powerful **zero-shot capabilities** (identifying concepts it wasn't explicitly trained on) and a richer understanding than image-only models. Cutisight utilizes a highly adapted CLIP-like encoder trained extensively on dermatological data.
                 </li>
                 <li>
-                    <strong>Small Language Models (SLMs):</strong> While Large Language Models (LLMs) like GPT-4 demonstrate impressive general knowledge, they are computationally expensive. Small Language Models (SLMs) (e.g., architectures like Gemma, SmolLM  or distilled versions of larger models) offer a more efficient alternative. They possess strong reasoning and language generation capabilities but with significantly fewer parameters. For Cutisight, an SLM is fine-tuned on a massive corpus of dermatology-specific text (textbooks, guidelines, research papers) and our custom instruction datasets. This specialization allows it to understand medical context, generate clinically relevant text, engage in diagnostic reasoning, and operate efficiently on edge devices.
+                    <strong>Small Language Models (SLMs):</strong> While Large Language Models (LLMs) like GPT-4 demonstrate impressive general knowledge, they are computationally expensive. **Small Language Models (SLMs)** (e.g., architectures like Gemma, SmolLM or distilled versions of larger models) offer a more efficient alternative. They possess strong reasoning and language generation capabilities but with significantly fewer parameters. For Cutisight, an SLM is fine-tuned on a massive corpus of dermatology-specific text (textbooks, guidelines, research papers) and our custom instruction datasets. This specialization allows it to understand medical context, generate clinically relevant text, engage in diagnostic reasoning, and operate efficiently on edge devices.
                 </li>
             </ul>
 
@@ -326,14 +329,14 @@
 
              <h3>Future Directions: Seamless Integration</h3>
              <p>
-                We envision further integration to maximize accessibility, including exploring connections with mobile assistants like Google Gemini. This could allow users to interact with Cutisight through voice commands or within familiar mobile interfaces, further lowering the barrier to accessing preliminary dermatological assessment.
+                We envision further integration to maximize accessibility, including exploring connections with mobile assistants like **Google Gemini**. This could allow users to interact with Cutisight through voice commands or within familiar mobile interfaces, further lowering the barrier to accessing preliminary dermatological assessment.
              </p>
         </section>
 
         <section id="data">
             <h2>Data: The Lifeblood of Accurate and Equitable AI</h2>
             <p>
-                The adage "garbage in, garbage out" is acutely true for medical AI. The performance, reliability, and crucially, the fairness of Cutisight depend entirely on the quality, diversity, and relevance of the data it learns from. Our data strategy, meticulously curated and overseen by Dr. Mehul Tyagi, is designed to build a robust foundation specifically for the Indian context.
+                The adage "garbage in, garbage out" is acutely true for medical AI. The performance, reliability, and crucially, the **fairness** of Cutisight depend entirely on the quality, diversity, and relevance of the data it learns from. Our data strategy, meticulously curated and overseen by Dr. Mehul Tyagi, is designed to build a robust foundation specifically for the Indian context.
             </p>
 
             <h3>A Multi-Source, Context-Aware Approach</h3>
@@ -445,10 +448,7 @@
                  <a href="https://www.linkedin.com/in/drmehultyagi/" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
                  <a href="https://www.instagram.com/drmehultyagi/" target="_blank" rel="noopener noreferrer">Instagram</a>
              </div>
-             <p class="publications">
-                <!-- Reference to publications remains subtle -->
-                Dr. Tyagi contributes to clinical dermatology research via publications in various peer-reviewed journals.
-             </p>
+            
             <p style="margin-top: 20px;">© 2025 Cutisight. All rights reserved.</p>
         </div>
     </footer>
