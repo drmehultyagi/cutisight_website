@@ -4,35 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Cutisight: Explainable AI for Clinical Dermatology in India. Harnessing vision-language models to bridge the gap in skin health access. Founded by Dr. Mehul Tyagi, MD (AIIMS Delhi).">
-    <title>Cutisight: Explainable Artificial Intelligence for Clinical Dermatology</title>
+    <!-- Updated Title to reflect header change -->
+    <title>CUTISIGHT: A Vision For AI in Clinical Dermatology</title>
     <style>
         /* Basic Reset & Defaults */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.7; color: #333; background-color: #f8f9fa; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
+        /* Container no longer limits width, only adds padding */
+        .container {
+            /* max-width: 1100px; */ /* Removed */
+            margin: 0 auto;
+            padding: 0 25px;
+        }
 
         /* Header */
         header { background-color: #2c3e50; color: #fff; padding: 2rem 0; text-align: center; margin-bottom: 40px; }
-        header h1 { font-size: 3rem; font-weight: 600; letter-spacing: 1px; }
+        /* --- MODIFIED Header H1 --- */
+        header h1 {
+            font-size: 5rem; /* Significantly larger */
+            font-weight: 700; /* Bolder */
+            letter-spacing: 4px; /* Spread letters out */
+            text-transform: uppercase; /* ALL CAPS */
+            padding: 0 25px;
+            margin-bottom: 10px; /* Add space below main title */
+            /* Attempt to make it roughly 80% wide - This is tricky with just text size/spacing.
+               Letter spacing helps. True width control would need more complex CSS or JS. */
+        }
+        /* --- ADDED Subtitle Style --- */
+        header .subtitle {
+            font-size: 1.5rem; /* Adjust size as needed */
+            font-weight: 300; /* Lighter weight */
+            color: #bdc3c7; /* Lighter color */
+            letter-spacing: 1px;
+            margin-top: 0;
+            padding: 0 25px;
+        }
+
 
         /* Section Styling */
         section { background-color: #fff; margin-bottom: 40px; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); }
-        section h2 { color: #1a5276; margin-bottom: 30px; font-size: 2.2rem; border-bottom: 3px solid #dee2e6; padding-bottom: 15px; font-weight: 600; }
-        section h3 { color: #1f618d; margin-top: 30px; margin-bottom: 15px; font-size: 1.6rem; font-weight: 600; }
-        p, li { margin-bottom: 18px; color: #495057; font-size: 1.05rem; }
-        ul { margin-left: 30px; margin-bottom: 18px; }
+        /* --- MODIFIED Section Headings --- */
+        section h2 {
+            color: #1a5276;
+            margin-bottom: 40px; /* Increased space after centered heading */
+            font-size: 2.2rem;
+            /* border-bottom: 3px solid #dee2e6; */ /* Removed border */
+            padding-bottom: 10px;
+            font-weight: 600;
+            text-align: center; /* Center headings */
+            max-width: 75ch; /* Limit heading width */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        section h3 {
+            color: #1f618d;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+            font-weight: 600;
+            text-align: center; /* Center headings */
+            max-width: 75ch; /* Limit heading width */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* --- MODIFIED Text Elements for Readability --- */
+        p, li {
+            margin-bottom: 18px;
+            color: #495057;
+            font-size: 1.05rem;
+            max-width: 75ch; /* Limit line length */
+            margin-left: auto; /* Center the text block */
+            margin-right: auto; /* Center the text block */
+        }
+        /* --- MODIFIED List Elements for Indentation & Centering --- */
+        ul, ol {
+            margin-bottom: 18px;
+            max-width: 75ch; /* Ensure list block is also centered */
+            margin-left: auto; /* Center the list block */
+            margin-right: auto; /* Center the list block */
+            padding-left: 40px; /* Add padding for bullets/numbers within the centered block */
+        }
+        li {
+             margin-left: 0; /* Reset specific li margin */
+             /* Ensure list items themselves don't re-center if they contain block elements */
+             text-align: left;
+        }
+
         strong { color: #212529; font-weight: 700; }
 
         /* Hero Section (Intro Text Only) */
         .hero-text { padding-bottom: 15px; }
 
         /* Quotes Styling */
-        .quote { font-style: italic; border-left: 6px solid #16a085; padding: 20px 25px; margin: 35px 0; background-color: #f0fafa; border-radius: 0 8px 8px 0; color: #34495e; font-size: 1.15rem; line-height: 1.8; }
+        .quote { font-style: italic; border-left: 6px solid #16a085; padding: 20px 25px; margin: 35px auto; background-color: #f0fafa; border-radius: 0 8px 8px 0; color: #34495e; font-size: 1.15rem; line-height: 1.8; max-width: 75ch; /* Also apply max-width and centering to quotes */}
         .quote p { margin-bottom: 0; }
 
         /* Table Styling */
-        table { width: 100%; border-collapse: collapse; margin: 30px 0; font-size: 0.95rem; }
-        table th, table td { border: 1px solid #ddd; padding: 12px 15px; text-align: left; }
+        .table-wrapper { /* Wrap tables for horizontal scroll */
+             overflow-x: auto;
+             margin: 30px auto; /* Center the wrapper */
+             max-width: 90%; /* Control max width of scrollable area */
+        }
+        table { width: 100%; border-collapse: collapse; /* Removed margin as it's on wrapper */ font-size: 0.95rem; min-width: 600px; /* Prevent table collapsing too much */}
+        table th, table td { border: 1px solid #ddd; padding: 12px 15px; text-align: left; white-space: normal; /* Allow wrapping within cells */}
         table th { background-color: #e9ecef; color: #343a40; font-weight: 600; }
         table tr:nth-child(even) { background-color: #f8f9fa; }
         table caption { caption-side: bottom; text-align: center; margin-top: 10px; font-size: 0.9rem; color: #6c757d; }
@@ -40,34 +114,83 @@
         /* Founder Bio Section */
         .founder-bio { background-color: #eaf2f8; border-left: 5px solid #2980b9; padding: 30px; margin-top: 40px; border-radius: 8px; }
         .founder-bio h2 { border: none; padding-bottom: 0; margin-bottom: 20px; }
+        /* Ensure text within founder bio is also centered */
+        .founder-bio p {
+             max-width: 75ch;
+             margin-left: auto;
+             margin-right: auto;
+        }
+
+        /* Volunteer Section Specific Styling (Optional) */
+        #volunteer ul { list-style-type: none; padding-left: 0; /* Remove default padding for this specific list */}
+        #volunteer li { margin-bottom: 10px; }
+        #volunteer li a { text-decoration: none; color: #1f618d; }
+        #volunteer li a:hover { text-decoration: underline; }
+
 
         /* Footer */
         footer { background-color: #34495e; color: #ecf0f1; text-align: center; margin-top: 50px; padding: 35px 20px; font-size: 0.95rem; }
-        footer p { color: #bdc3c7; margin-bottom: 12px; }
+        footer p { color: #bdc3c7; margin-bottom: 12px; max-width: none; /* Footer text can be wider */}
         footer a { color: #1abc9c; text-decoration: none; margin: 0 10px; transition: color 0.3s ease; }
         footer a:hover { color: #ffffff; text-decoration: underline; }
         .footer-links { margin-top: 15px; margin-bottom: 15px; }
+        .publications { font-size: 0.85rem; margin-top: 15px; color: #95a5a6; }
 
         /* Responsive adjustments */
          @media (max-width: 768px) {
-            header h1 { font-size: 2.4rem; }
+            /* --- MODIFIED Mobile Header --- */
+            header h1 {
+                font-size: 2.8rem; /* Adjust smaller size */
+                letter-spacing: 2px;
+            }
+            header .subtitle {
+                font-size: 1rem; /* Adjust smaller size */
+            }
+            /* --- MODIFIED Mobile Text Alignment --- */
             section { padding: 25px; }
-            section h2 { font-size: 1.8rem; }
-            section h3 { font-size: 1.4rem; }
-            p, li { font-size: 1rem; }
-            .quote { font-size: 1.05rem; padding: 15px 20px; }
-            table { font-size: 0.85rem; }
-            table th, table td { padding: 8px 10px; }
-        }
+            section h2 { font-size: 1.8rem; max-width: none; /* Allow full width */}
+            section h3 { font-size: 1.4rem; max-width: none; /* Allow full width */}
+            p, li {
+                font-size: 1rem;
+                max-width: none; /* Allow text full width on small screens */
+                margin-left: 0; /* Reset auto margins */
+                margin-right: 0;
+                text-align: left; /* Ensure text aligns left */
+            }
+             ul, ol {
+                 max-width: none; /* Allow lists full width */
+                 margin-left: 25px; /* Adjust mobile indentation */
+                 margin-right: 0;
+                 padding-left: 15px; /* Adjust mobile padding */
+             }
+            .quote {
+                font-size: 1.05rem; padding: 15px 20px; max-width: none; margin-left: 0; margin-right: 0;
+            }
+            /* --- MODIFIED Mobile Table Handling --- */
+            .table-wrapper {
+                max-width: none; /* Allow full width scroll */
+                margin-left: -25px; /* Offset container padding */
+                margin-right: -25px;
+                padding-left: 10px; /* Add some padding within scroll area */
+                padding-right: 10px;
+            }
+            table { font-size: 0.85rem; min-width: 500px; /* Adjust min-width if needed */}
+            table th, table td { padding: 8px 10px; white-space: nowrap; /* Force no wrap on mobile for horizontal scroll */}
+
+            .founder-bio p { max-width: none; margin-left: 0; margin-right: 0; }
+         }
     </style>
 </head>
 <body>
 
+    <!-- ==================== MODIFIED HEADER ==================== -->
     <header>
         <div class="container">
-            <h1>Cutisight: Explainable Artificial Intelligence for Clinical Dermatology</h1>
+            <h1>CUTISIGHT</h1>
+            <p class="subtitle">A Vision For AI in Clinical Dermatology</p>
         </div>
     </header>
+    <!-- ========================================================= -->
 
     <main class="container">
 
@@ -172,6 +295,7 @@
 
             <h3>The Cutisight Pipeline: From Input to Insight</h3>
             <p>When a user provides an image and accompanying text (symptoms, history):</p>
+            <!-- Using <ol> for numbered list -->
             <ol>
                 <li><strong>Input Processing:</strong> The image is pre-processed (resized, normalized), and the text is tokenized (broken into meaningful units).</li>
                 <li><strong>Multimodal Encoding:</strong> The image passes through the specialized Vision Encoder, generating a rich visual embedding. Simultaneously, the input text passes through a Text Encoder, creating a textual embedding.</li>
@@ -214,48 +338,51 @@
 
             <h3>A Multi-Source, Context-Aware Approach</h3>
             <p>We leverage several types of data, each serving a distinct purpose:</p>
-            <table>
-                <caption>Overview of Data Sources for Cutisight Training</caption>
-                <thead>
-                    <tr>
-                        <th>Data Type</th>
-                        <th>Description & Content</th>
-                        <th>Purpose</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Proprietary Indian Clinical Dataset</strong></td>
-                        <td>Over 50,000+ anonymized clinical images collected under expert supervision across various settings in India. Includes diverse skin types (Fitzpatrick IV-VI), common and rare conditions prevalent locally, varied lighting, and images from different devices. Meticulously annotated with diagnoses, key features, and metadata.</td>
-                        <td>Core visual training; ensures relevance to Indian population and conditions; reduces bias from Western-centric data.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Public Diverse Datasets</strong></td>
-                        <td>Ethically sourced public datasets focusing on skin of color, such as <strong>Diverse Dermatology Images (DDI)</strong>. Contains images annotated for various conditions across different skin tones.</td>
-                        <td>Explicitly improves model performance and fairness on underrepresented darker skin types; enhances generalization.</td>
-                    </tr>
-                     <tr>
-                        <td><strong>Public General Dermatology Datasets</strong></td>
-                        <td>Established public datasets like <strong>ISIC</strong> (melanoma focus), <strong>PAD-UFES</strong> (common conditions), <strong>SCIN</strong>, <strong>SkinCAP</strong>. Contain large numbers of images for various conditions, often well-annotated.</td>
-                        <td>Increases exposure to a wider range of conditions and visual presentations; improves robustness for common global dermatoses.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Synthetic Data (Augmentation)</strong></td>
-                        <td>Generated images using advanced AI techniques (inspired by methods like <strong>DermaSynth</strong>), particularly for rare conditions or specific feature variations where real data is scarce. Used cautiously and validated for realism.</td>
-                        <td>Augments training data for rare cases; improves model robustness against visual variations; helps balance dataset distribution.</td>
-                    </tr>
-                     <tr>
-                        <td><strong>Textual Knowledge Corpus</strong></td>
-                        <td>Vast collection of text from <strong>PubMed abstracts, open-access medical textbooks, WHO guidelines, clinical protocols, reputable online resources (e.g., DermNet)</strong>, and custom-written clinical vignettes.</td>
-                        <td>Trains the SLM component; provides medical knowledge; enables understanding of symptoms, history, and generation of clinically relevant text.</td>
-                    </tr>
-                     <tr>
-                        <td><strong>Custom Image-Caption & Instruction Data</strong></td>
-                        <td>Large datasets created in-house by Dr. Tyagi: (1) Pairs of dermatological images and detailed textual descriptions (captions). (2) Question-answer pairs, diagnostic reasoning examples, explanation requests, and conversational dialogues (instructions) developed using tools like Google AI Studio & GitHub Copilot.</td>
-                        <td>Crucial for fine-tuning the vision-language connection (captions) and aligning the SLM for chat, explanation, and instruction-following capabilities (instructions).</td>
-                    </tr>
-                </tbody>
-            </table>
+            <!-- Added table wrapper for horizontal scrolling on mobile -->
+            <div class="table-wrapper">
+                <table>
+                    <caption>Overview of Data Sources for Cutisight Training</caption>
+                    <thead>
+                        <tr>
+                            <th>Data Type</th>
+                            <th>Description & Content</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Proprietary Indian Clinical Dataset</strong></td>
+                            <td>Over 50,000+ anonymized clinical images collected under expert supervision across various settings in India. Includes diverse skin types (Fitzpatrick IV-VI), common and rare conditions prevalent locally, varied lighting, and images from different devices. Meticulously annotated with diagnoses, key features, and metadata.</td>
+                            <td>Core visual training; ensures relevance to Indian population and conditions; reduces bias from Western-centric data.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Public Diverse Datasets</strong></td>
+                            <td>Ethically sourced public datasets focusing on skin of color, such as <strong>Diverse Dermatology Images (DDI)</strong>. Contains images annotated for various conditions across different skin tones.</td>
+                            <td>Explicitly improves model performance and fairness on underrepresented darker skin types; enhances generalization.</td>
+                        </tr>
+                         <tr>
+                            <td><strong>Public General Dermatology Datasets</strong></td>
+                            <td>Established public datasets like <strong>ISIC</strong> (melanoma focus), <strong>PAD-UFES</strong> (common conditions), <strong>SCIN</strong>, <strong>SkinCAP</strong>. Contain large numbers of images for various conditions, often well-annotated.</td>
+                            <td>Increases exposure to a wider range of conditions and visual presentations; improves robustness for common global dermatoses.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Synthetic Data (Augmentation)</strong></td>
+                            <td>Generated images using advanced AI techniques (inspired by methods like <strong>DermaSynth</strong>), particularly for rare conditions or specific feature variations where real data is scarce. Used cautiously and validated for realism.</td>
+                            <td>Augments training data for rare cases; improves model robustness against visual variations; helps balance dataset distribution.</td>
+                        </tr>
+                         <tr>
+                            <td><strong>Textual Knowledge Corpus</strong></td>
+                            <td>Vast collection of text from <strong>PubMed abstracts, open-access medical textbooks, WHO guidelines, clinical protocols, reputable online resources (e.g., DermNet)</strong>, and custom-written clinical vignettes.</td>
+                            <td>Trains the SLM component; provides medical knowledge; enables understanding of symptoms, history, and generation of clinically relevant text.</td>
+                        </tr>
+                         <tr>
+                            <td><strong>Custom Image-Caption & Instruction Data</strong></td>
+                            <td>Large datasets created in-house by Dr. Tyagi: (1) Pairs of dermatological images and detailed textual descriptions (captions). (2) Question-answer pairs, diagnostic reasoning examples, explanation requests, and conversational dialogues (instructions) developed using tools like Google AI Studio & GitHub Copilot.</td>
+                            <td>Crucial for fine-tuning the vision-language connection (captions) and aligning the SLM for chat, explanation, and instruction-following capabilities (instructions).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> <!-- End table wrapper -->
 
             <h3>Refining Data: Beyond Raw Pixels and Text</h3>
             <p>
@@ -271,6 +398,26 @@
             </ul>
             <p>This meticulous data preparation process is fundamental to building an AI that is not only accurate but also understands the nuances of clinical dermatology and can communicate effectively and safely.</p>
         </section>
+
+        <!-- ==================== ADDED VOLUNTEER SECTION ==================== -->
+        <section id="volunteer">
+            <h2>Get Involved - Volunteer with Cutisight</h2>
+            <p>
+                Cutisight is driven by a passion for improving healthcare access through technology. We believe in collaborative effort and welcome individuals who share our vision. If you have expertise in AI/ML, software development, clinical dermatology, medical annotation, UI/UX design, content creation, or simply a strong desire to contribute to this impactful project, we would love to hear from you.
+            </p>
+            <p>
+                We are looking for volunteers to assist in various capacities as the project grows. Your contribution, big or small, can make a real difference.
+            </p>
+            <p>
+                <strong>Reach out and let us know how you'd like to help:</strong>
+            </p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:drmehultyagi@cutisight.com">drmehultyagi@cutisight.com</a></li>
+                <li><strong>LinkedIn:</strong> Connect with <a href="https://www.linkedin.com/in/drmehultyagi/" target="_blank" rel="noopener noreferrer">Dr. Mehul Tyagi</a></li>
+                <li><strong>Instagram:</strong> Message <a href="https://www.instagram.com/drmehultyagi/" target="_blank" rel="noopener noreferrer">@drmehultyagi</a></li>
+            </ul>
+        </section>
+        <!-- =============================================================== -->
 
         <!-- Founder Bio Section -->
         <section class="founder-bio">
